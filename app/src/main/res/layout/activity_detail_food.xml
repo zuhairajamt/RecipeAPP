@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/layout"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/tv_nama_makanan"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Nama Makanan" />
+
+            <TextView
+                android:id="@+id/tv_deskripsi"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Deskripsi" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/judul_deskrispi"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="Bahan Memasak" />
+
+            <kr.co.prnd.readmore.ReadMoreTextView
+                android:id="@+id/tv_bahan_makanan"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deskripsi"
+                android:background="@color/text"
+                android:padding="10sp"
+                android:layout_marginTop="16dp"
+                android:textSize="15sp"
+                android:text="Bahan makanan"
+                app:readMoreColor="@color/readmore"
+                app:readMoreMaxLine="4"
+                app:readMoreText="See More"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/judul_caramasak"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="Cara Memasak" />
+
+            <TextView
+                android:id="@+id/tv_cara_memasak"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="16dp"
+                android:text="Cara Memasak" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

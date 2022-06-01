@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/layout"
+    android:padding="16sp"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama makanan" />
+
+            <EditText
+                android:id="@+id/nama_makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/tv_deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama_makanan"
+                android:layout_marginTop="16dp"
+                android:text="Deskripsi" />
+
+            <EditText
+                android:id="@+id/deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_deskripsi" />
+
+            <TextView
+                android:id="@+id/tv_bahan_makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deskripsi"
+                android:layout_marginTop="16dp"
+                android:text="Bahan makanan" />
+
+            <EditText
+                android:id="@+id/bahan_makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_bahan_makanan" />
+
+            <TextView
+                android:id="@+id/tv_cara_memasak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bahan_makanan"
+                android:layout_marginTop="16dp"
+                android:text="Cara Memasak" />
+
+            <EditText
+                android:id="@+id/cara_memasak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_cara_memasak" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cara_memasak"
+                android:id="@+id/btn_simpan"
+                android:text="simpan" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateFoodActivity"
+    android:padding="16dp" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama minuman" />
+
+    <EditText
+        android:id="@+id/nama_minuman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama_minuman"
+        android:layout_marginTop="16dp"
+        android:text="Deskripsi" />
+
+    <EditText
+        android:id="@+id/deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_deskripsi" />
+
+    <TextView
+        android:id="@+id/tv_bahan_minuman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deskripsi"
+        android:layout_marginTop="16dp"
+        android:text="Bahan minuman" />
+
+    <EditText
+        android:id="@+id/bahan_minuman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_bahan_minuman" />
+
+    <TextView
+        android:id="@+id/tv_cara_memasak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bahan_minuman"
+        android:layout_marginTop="16dp"
+        android:text="Cara Memasak" />
+
+    <EditText
+        android:id="@+id/cara_memasak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_cara_memasak" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cara_memasak"
+        android:id="@+id/btn_simpan"
+        android:text="simpan" />
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_food"
+        android:icon="@drawable/ic_baseline_set_food"
+        android:title="Foods" />
+    <item
+        android:id="@+id/nav_drink"
+        android:icon="@drawable/ic_baseline_emoji_drink"
+        android:title="Drinks" />
+    <item
+        android:id="@+id/nav_restaurant"
+        android:icon="@drawable/ic_baseline_restaurant"
+        android:title="Restaurant" />
+</menu>
