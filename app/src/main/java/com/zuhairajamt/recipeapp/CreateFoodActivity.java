@@ -10,10 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.zuhairajamt.recipeapp.Database;
-import com.zuhairajamt.recipeapp.MainActivity;
-import com.zuhairajamt.recipeapp.R;
-
 public class CreateFoodActivity extends AppCompatActivity {
     protected Cursor cursor;
     Database database;

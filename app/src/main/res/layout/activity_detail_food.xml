@@ -1,79 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:id="@+id/layout"
-    android:padding="16dp"
     android:layout_height="match_parent">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/gambar"
+                android:layout_width="fill_parent"
+                android:layout_height="290dp"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="-16dp"
+                android:layout_marginEnd="-16dp"
+                android:layout_marginBottom="-36dp"
+                android:adjustViewBounds="true"
+                android:padding="-20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="centerCrop"
+                />
 
             <TextView
-                android:layout_width="match_parent"
                 android:id="@+id/tv_nama_makanan"
-                android:textColor="@color/black"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Nama Makanan" />
-
-            <TextView
-                android:id="@+id/tv_deskripsi"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Deskripsi" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:id="@+id/judul_deskrispi"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15sp"
-                android:textStyle="bold"
+                android:text="Nama Makanan"
+                android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textColor="@color/black"
-                android:text="Bahan Memasak" />
+                android:textStyle="bold" />
 
             <kr.co.prnd.readmore.ReadMoreTextView
-                android:id="@+id/tv_bahan_makanan"
-                android:textColor="@color/black"
+                android:id="@+id/tv_deskripsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/deskripsi"
-                android:background="@color/text"
-                android:padding="10sp"
                 android:layout_marginTop="16dp"
+                android:text="Deskripsi"
+                android:textColor="@color/black"
                 android:textSize="15sp"
-                android:text="Bahan makanan"
                 app:readMoreColor="@color/readmore"
-                app:readMoreMaxLine="4"
-                app:readMoreText="See More"/>
+                app:readMoreMaxLine="3"
+                app:readMoreText="See More" />
 
             <TextView
+                android:id="@+id/judul_deskrispi"
                 android:layout_width="match_parent"
-                android:id="@+id/judul_caramasak"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15sp"
-                android:textStyle="bold"
-                android:textSize="22sp"
+                android:text="Bahan Memasak"
                 android:textColor="@color/black"
-                android:text="Cara Memasak" />
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_bahan_makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_radius"
+                android:padding="10sp"
+                android:text="Bahan Makanan"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/judul_caramasak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:text="Cara Memasak"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_cara_memasak"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
                 android:layout_marginTop="16dp"
-                android:text="Cara Memasak" />
+                android:text="Cara Memasak"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
+            <LinearLayout
+                android:id="@+id/btn_action_wallet_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@id/tv_cara_memasak"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Change Image"
+                    android:id="@+id/btn_chose" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Add"
+                    android:id="@+id/btn_add_image" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

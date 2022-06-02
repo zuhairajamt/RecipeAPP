@@ -23,11 +23,9 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
 
     String[] daftar;
     ListView listView;
-    Menu menu;
     protected Cursor cursor;
     Database database;
     public static MainActivity ma;
@@ -37,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FloatingActionButton fab = findViewById(R.id.fab);
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FoodFragment()).commit();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,32 +43,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(pindah);
             }
         });
-        ma = this;
-        database = new Database(this);
-        RefreshList();
 
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // Set home selected
+        bottomNavigationView.setSelectedItemId(R.id.nav_food);
+
+        // Perform ItemSelectedListener
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-
+                Fragment selectedFragment = null;  // Harus null dulu agart line 41 tidak error
                 switch (item.getItemId()){
-                    case R.id.nav_food:
-                        selectedFragment = new FoodFragment();
-                        break;
                     case R.id.nav_drink:
-                        selectedFragment = new DrinkFragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), DrinkActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.nav_food:
+                        return true;
                     case R.id.nav_restaurant:
-                        selectedFragment = new RestaurantFragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), RestaurantActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
-
                 return true;
             }
         });
+
+        ma = this;
+        database = new Database(this);
+        RefreshList();
     }
 
     public void RefreshList() {

@@ -15,8 +15,8 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sqlmakanan = "create table makanan(nama text null, deskripsi text null, bahan text null, carabuat text null);";
-        String sqlminuman = "create table minuman(nama text null,  favorite int null, deskripsi text null, bahan text null, carabuat text null,gambar text null);";
+        String sqlmakanan = "create table makanan(nama text null,  favorite int null, deskripsi text null, bahan text null, carabuat text null,gambar blob null);";
+        String sqlminuman = "create table minuman(nama text null,  favorite int null, deskripsi text null, bahan text null, carabuat text null,gambar blob null);";
         // String sqlresotran = "create table restoran(nama text null, alamat text null, telp text null, kota text null, gambar text null, rating real null);";
         Log.d("Data","onCreate: " + sqlmakanan);
         Log.d("Data","onCreate: " + sqlminuman);
@@ -27,7 +27,8 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db0, int db1, int db2) {
-
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
+
+
 }
