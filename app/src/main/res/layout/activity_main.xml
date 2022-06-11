@@ -6,11 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <LinearLayout
+        android:id="@+id/lol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_all"
+            android:layout_width="158dp"
+            android:textColor="@drawable/button_text_color"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:backgroundTint="@color/abu"
+            android:text="All" />
+
+        <Button
+            android:id="@+id/btn_fav"
+            android:layout_width="158dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@drawable/button_text_color"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/abu"
+            android:text="Favorites" />
+    </LinearLayout>
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+        android:layout_height="fill_parent"
+        android:layout_marginStart="-6dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="-2dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"

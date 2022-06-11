@@ -16,10 +16,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -50,6 +51,19 @@ public class DetailFoodActivity extends AppCompatActivity {
         btn_add_image = findViewById(R.id.btn_add_image);
 
         btn_simpan = findViewById(R.id.btn_simpan);
+
+        FloatingActionButton fab = findViewById(R.id.fab_fav);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = database.getWritableDatabase();
+                db.execSQL("UPDATE makanan set favorite= '1" + "' WHERE nama = '" +
+                        getIntent().getStringExtra("nama") + "'");
+                Toast.makeText(DetailFoodActivity.this, "Add to favorite", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         SQLiteDatabase db = database.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM makanan WHERE nama = '" +
@@ -105,8 +119,9 @@ public class DetailFoodActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
+
+    }
 
     public static byte[] imageViewToByte(ImageView image) {
         Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();

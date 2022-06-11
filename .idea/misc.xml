@@ -4,17 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/drawable/border_radius.xml" value="0.3671875" />
+        <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/drawable/button_text_color.xml" value="0.3828125" />
+        <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.36153846153846153" />
+        <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.3828125" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_create_drink.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_create_food.xml" value="0.3561643835616438" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_detail_drink.xml" value="0.35260416666666666" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_detail_food.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_drink.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_favorite.xml" value="0.16447368421052633" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_restaurant.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_splash_screen.xml" value="0.35104166666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_update_drink.xml" value="0.35260416666666666" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/activity_update_food.xml" value="0.28062678062678065" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/fragment_drink.xml" value="0.1" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/fragment_food.xml" value="0.25" />
+        <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/layout/row_restaurant.xml" value="0.1" />
         <entry key="..\:/Android/AndroidStudioProjects/RecipeAPP/app/src/main/res/menu/bottom_navigation.xml" value="0.25" />
       </map>
     </option>

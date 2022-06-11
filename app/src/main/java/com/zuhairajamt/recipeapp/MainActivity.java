@@ -10,12 +10,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -66,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), RestaurantActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                   /* case R.id.nav_fav:
+                        startActivity(new Intent(getApplicationContext(), FavoriteActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;*/
                 }
                 return true;
             }
@@ -78,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void RefreshList() {
         SQLiteDatabase db = database.getReadableDatabase();
+        Button btn_fav = findViewById(R.id.btn_fav);
+        ArrayAdapter<String> adapter;
+
         cursor = db.rawQuery("select * from makanan", null);
         daftar = new String[cursor.getCount()];
         cursor.moveToFirst();
@@ -88,7 +96,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
         listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, daftar);
+        listView.setAdapter(adapter);
+
+        //((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
+
+        btn_fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Bingung gagal listview tidak terupdate akhirnya buat activity buat button tapi pakai layout main
+                //cursor = db.rawQuery("SELECT * FROM makanan WHERE favorite = 1", null);
+                //daftar = new String[cursor.getCount()];
+                //cursor.moveToFirst();
+                //Toast.makeText(MainActivity.this, "Menampilkan makanan favorit", Toast.LENGTH_SHORT).show();
+
+                //for (int i = 0; i < cursor.getCount(); i++) {
+                //    cursor.moveToPosition(i);
+                //    daftar[i] = cursor.getString(0).toString();
+                //}
+                //MainActivity.ma.RefreshList();
+                //adapter.notifyDataSetChanged();
+                //((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
+                //daftar.add(""); //add new item to the list
+                //adapter.notifyDataSetChanged(); //notify adapter
+                startActivity(new Intent(getApplicationContext(), FavoriteActivity.class));
+                overridePendingTransition(0,0);
+            }
+        });
+
+        //adapter.notifyDataSetChanged();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -120,8 +156,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 builder.create().show();
+                //((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
+                //adapter.notifyDataSetChanged();
             }
         });
         ((ArrayAdapter) listView.getAdapter()).notifyDataSetInvalidated();
     }
 }
+
